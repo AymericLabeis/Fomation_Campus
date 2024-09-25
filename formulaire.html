@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire d'inscription</title>
+  <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Paprika&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="">
+  <link rel="icon" type="image/x-icon" href="./ressources/favicon-16x16.png">
+  <style>
+    body {
+      font-family: 'Paprika', sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* height: 100vh;*/
+      margin: 10px;
+    }
+
+    form {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      width: 500px;
+    }
+
+    h1 {
+      font-family: 'Spicy Rice', cursive;
+      letter-spacing: 2px;
+      text-align: center;
+      color: #a00202;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-family: 'Marck Script', cursive;
+      font-size: 25px;
+      color: #333333;
+      display: block;
+      margin-bottom: 5px;
+      margin-left: 10px;
+    }
+
+    input[type="text"],
+    input[type="radio"],
+    input[type="email"],
+    input[type="password"],
+
+    input[type="tel"],
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+    }
+
+    input[type="radio"] {
+      width: auto;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #5c85d6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #4a6bb1;
+    }
+
+    .radio-group {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .radio-group label {
+      margin: 0 20px;
+      font-size: 18px;
+    }
+
+    .radio-group input {
+      margin: 0 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Formulaire -->
+  <form action="">
+    <h1 style="color: #1c0786;">Formulaire d'inscription  </h1>
+
+    <label for="first_name">Nom</label>
+    <input type="text" required minlength="10" maxlength="20" placeholder="Entrez votre nom">
+
+    <label for="last_name">Prénom</label>
+    <input type="text" required placeholder="Entrez votre prénom">
+
+    <label for="tel">Télephone</label>
+    <input type="tel" required placeholder="Entrez votre numéro de telephone">
+
+    <label for="age">Âge</label>
+    <input type="number" value="27" id="age" name="age" required min="15" max="99" placeholder="Entrez votre âge">
+
+
+    <label for="E-mail">Adresse E-mail</label>
+    <input type="email" required placeholder="Entrez votre E-mail">
+
+    <label for="password">Password</label>
+    <input type="password" required placeholder="Entrez votre mot de passe">
+
+    <label>Sexe</label>
+    <div class="radio-group">
+      <input type="radio" name="sexe" value="homme">
+      <label for="homme" >Homme  </label>
+
+      <input type="radio" name="sexe" value="femme">
+      <label for="femme">Femme</label>
+
+      <input type="radio" name="sexe" value="autres">
+      <label for="autres">Autres</label>
+    </div>
+
+    <label for="volume">Volume :</label>
+    <input type="range" id="volume" name="volume" min="0" max="100">
+
+    <input type="submit" value="Envoyer">
+  </form>
+
+</body>
+
+</html>

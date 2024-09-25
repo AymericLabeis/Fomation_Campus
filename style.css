@@ -1,0 +1,666 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(150deg, rgb(89,118,168),rgb(242,240,238));
+  width: 100%;
+
+}
+.exclu{
+ /*font-family: Verdana, Geneva, Tahoma, sans-serif;*/
+ font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+ letter-spacing: 0.20em; /* Ajuste l'espacement entre les lettres */
+ margin: 15px;
+ font-size: 50px;
+ text-align: center;
+ color: rgb(41,39,37);
+ text-shadow: 4px 5px 6px rgba(0, 0, 0, 0.4);
+}
+.news{
+  /*font-family: Verdana, Geneva, Tahoma, sans-serif;*/
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+ letter-spacing: 0.20em; /* Ajuste l'espacement entre les lettres */
+ margin: 15px;
+ font-size: 40px;
+ text-align:start;
+ color: rgb(41,39,37);
+ margin-left: 50px;
+}
+header {
+  width: 100%;
+}
+.ContaineurMenu{
+  width: 100%;
+  display: flex;
+  align-items: center;
+ /*border: 5px solid rgb(19, 175, 115);*/
+}
+.logoWidget {
+  width: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  
+}
+.logo {
+  width: 90%;
+  max-width: 250px;
+  margin: 5px;
+}
+.widget {
+  margin: 30px auto;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 80px;
+  max-height: 300px;
+  border: 4px solid rgb(78, 74, 187);
+  background-color: rgb(41,39,37);
+  border-radius: 15px;
+}
+.home, .reglage, .camera, .compte, .clap {
+  margin: 10px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
+.home {
+  background: url(ressources/home.png);
+  background-size: 100%;
+}
+.clap {
+  background: url(ressources/clap.png);
+  background-size: 100%;
+}
+.reglage {
+  background: url(ressources/reglages.png);
+  background-size: 100%;
+}
+.camera {
+  background: url(ressources/camera.png);
+  background-size: 100%;
+}
+.compte {
+  background: url(ressources/compte.png);
+  background-size: 100%;
+}
+.Menu {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  
+   
+    
+ /* border: 2px solid black;*/
+}
+
+.inputMenuContainer {
+  position: sticky;
+  top: 0; 
+  padding: 5px;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+
+   z-index: 1000;
+}
+.inputSearch {
+ 
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*border: 2px solid black;*/
+  flex-grow: 1;
+ /* border: 2px solid black;*/
+}
+.inputSearch input {
+  padding: 8px 8px 8px 30px;
+  width: 35%;
+  height: 40px;
+  border: 4px solid rgb(255, 255, 255);
+  border-radius: 50px 15px 15px 50px;
+  font-size: 25px;
+  background-color: rgb(213, 215, 233);
+  
+}
+.inputSearch input::placeholder {
+  color: rgb(78, 74, 187); /* Couleur du placeholder */
+
+}
+.rechercher{
+  width: 4%;
+  min-width: 50px;
+  height: 40px; 
+  border-radius: 15px 50px 50px 15px;
+  border: 4px solid rgb(255, 255, 255);
+  background-color: rgb(78, 74, 187);
+  margin-left: 10px;
+  cursor: pointer;
+}
+.rechercher:hover{
+ /* border: 2px solid  rgb(56, 56, 56);*/
+ background-color: rgb(66, 62, 184);
+}
+.Micro, .notif {
+  margin-left: 15px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  border: 2px solid rgb(255, 255, 255);
+  cursor: pointer;
+}
+.Micro:hover, .notif:hover {
+  border: 2px solid  rgb(78, 74, 187);
+}
+.Micro {
+  background: url(ressources/micro.png);
+  background-color: rgb(213, 215, 233);
+  background-size: 100%;
+}
+
+.menuD {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+ 
+  z-index: 800; /* S'assure que l'élément reste au-dessus des autres */
+  /*border: 2px solid black;*/
+}
+.notif {
+  margin-left: 0px;
+  background: url(ressources/notif.png);
+  background-color: rgb(213, 215, 233);
+  background-size: 100%;
+}
+
+.barre {
+  margin-left: 15px;
+  margin-right: 20px;
+  width: 50px;
+  height: 50px;
+  background: url(ressources/3barre.png);
+  background-size: 100%;
+  border: none;
+  cursor: pointer;
+  transition: filter 0.3s; /* Smooth transition for the filter */
+}
+
+.barre:hover {
+  filter: hue-rotate(350deg); /* Adjust the value to change the color */
+}
+
+.categories {
+  
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 10px;
+  margin-left: 40px;
+  overflow-x: auto; /* Permet le défilement horizontal */
+  white-space: nowrap; /* Évite le retour à la ligne des éléments enfants */
+  scrollbar-width: none; /* Masque la barre de défilement pour les navigateurs modernes */
+  max-width: 100%; /* Assure que le conteneur ne dépasse pas la largeur parent */
+}
+
+/* Personnalisation de la barre de défilement */
+.categories::-webkit-scrollbar {
+  display: none; /* Masque la barre de défilement pour les navigateurs basés sur WebKit */
+}
+
+.nomCat {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  min-width: 160px;
+  flex-shrink: 0; /* Empêche les éléments de rétrécir */
+  font-size: 20px;
+  color: aliceblue;
+  border: 2px solid rgb(253, 253, 253);
+  border-radius: 8px;
+  background-color: rgb(41, 39, 37);
+  cursor: pointer;
+}
+
+.nomCat:hover {
+  border: 2px solid rgb(180, 180, 180);
+}
+
+.ContainerExclu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0px 10px 20px;
+}
+.containeurVideoExclu {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  overflow: hidden;
+  width: 100%; /* Ajustez cette largeur selon vos besoins */
+}
+.videoExclu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.videoExclu::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+.videoExclu video {
+  cursor: pointer;
+  margin: 0 10px;
+  width: calc(33.33% - 20px); /* Largeur ajustée pour afficher 3 vidéos avec marges */
+  aspect-ratio: 16/9;
+  max-width: 700px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  
+}
+.flecheG, .flecheD {
+  /*background-size: cover;*/
+  display: none;
+} 
+.flecheG{
+  background: url(ressources/flcheg.png) no-repeat center;
+  background-color: rgb(41,39,37);
+  background-size: 100%;
+}
+.flecheD{
+  background: url(ressources/flched.png) no-repeat center;
+  background-color: rgb(41,39,37);
+  background-size: 100%;
+}
+.barreDef{
+  display: flex;
+  margin: 10px auto;
+  margin-top: 0px;
+  width: 70%;
+  height: 25px;
+  min-height: 0px;
+  background-color: rgb(213, 215, 233);;
+  border-radius: 15px;
+  border: 2px solid rgb(78, 74, 187);
+}
+.flecheBG, .flecheBD{
+  margin: auto;
+  display: block;
+  width: 20px;
+  height: 20px;
+  display: block;
+  border: none;
+  cursor: pointer;
+ 
+  
+}
+.flecheBG{
+  background: url(ressources/felchebg.png) no-repeat center;
+  
+  background-size: 100%;
+}
+.flecheBD{
+  background: url(ressources/felchebd.png) no-repeat center;
+  
+  background-size: 100%;
+}
+.rectDef{
+  cursor: pointer;
+  margin:auto;
+  width: 10%;
+  height: 13px;
+  min-height: 10px;
+  background-color: rgb(158, 153, 168);
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Pour une transition douce */
+}
+
+.rectDef.active {
+  background-color: rgb(78, 74, 187); /* Couleur lorsque l'élément est actif */
+}
+
+/*.ContainerExclu iframe:first-child {
+}*/
+.ContainerNews {
+  margin-top: 20px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  
+  /*border: 2px solid black;*/
+}
+
+.ContainerNews iframe {
+  
+  margin: 10px auto;
+  width: 15%;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+  max-width: 500px;
+  cursor: pointer;
+}
+video:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* Assure que la vidéo couvre tout l'écran */
+}
+
+@media screen and (min-width:768px) and (max-width:1279px)  {
+ 
+ 
+  .exclu {
+    margin: 2px;
+    font-size: 40px;
+    letter-spacing: 0.1em; /* Ajuste l'espacement entre les lettres */
+
+  }
+ 
+  .news{
+    margin: 0px;
+    font-size: 35px;
+    letter-spacing: 0.1em; 
+    margin-left: 30px;
+  }
+  .news{
+    margin-left: 40px;
+  }
+  .logoWidget {
+    width: 15%;
+    
+  }
+  .logo {
+    width: 90%;
+    margin: 5px;
+  }
+  .widget {
+    width: 70%;
+    margin: 40px auto;
+  padding: 5px;
+    
+  }
+  .home, .reglage, .camera, .compte, .clap {
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    border: none;
+  }
+  .Menu {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    
+  }
+  .inputMenuContainer {
+    justify-content: flex-start;
+    
+  }
+  .inputSearch { 
+    margin-left: 5px;
+   
+  }
+  .inputSearch input {
+    padding: 8px 8px 8px 20px;
+    width: 50%;
+    height: 30px;
+    font-size: 20px;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 50px 15px 15px 50px;
+  }
+  .rechercher{
+    width: 4%;
+    min-width: 40px;
+    height: 30px; 
+    border-radius: 15px 50px 50px 15px;
+    border: 3px solid rgb(255, 255, 255);
+    margin-left: 10px;
+  }
+  .Micro, .notif{
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+  }
+  .barre {
+    margin-left: 10px;
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+   
+  }
+  .categories {
+    display: flex;
+    align-items: center;
+    
+    margin-left: 20px;
+    /*border: 2px solid black;*/
+  }
+  .nomCat {
+    margin: 5px;
+    padding: 5px;
+    min-width: 150px;
+    font-size: 18px;
+
+  }
+  .ContainerExclu{
+    display: flex;
+    padding:  10px 0px;
+    
+  }
+  .containeurVideoExclu {
+    display: flex;
+    margin-top: 5px;
+   max-width: 700px;
+    aspect-ratio: 16/9;
+  }
+  
+  .flecheG, .flecheD {
+    display: block;
+    
+    margin: 0px;
+    width: 30px;
+    height: 30px;
+    display: block;
+     border-radius: 50%;
+     border: none;
+     cursor: pointer;
+   
+    
+  }
+  .videoExclu {
+   
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    
+  }
+  .videoExclu video {
+   margin: 10px ;
+    width: 100%;
+    border-radius: 10px;
+  }
+   .barreDef{
+   display: none;
+  }
+  .ContainerNews {
+    width: 100%;
+    margin-top: 10px;
+   
+  }
+  
+  .ContainerNews iframe {
+    margin: 10px auto;
+    width: 30%;
+    aspect-ratio: 16/9;
+    border-radius: 10px;
+  }
+}
+@media screen and (max-width:767px){
+ 
+  .exclu {
+    margin: 2px;
+    font-size: 35px;
+    letter-spacing: 0.1em; /* Ajuste l'espacement entre les lettres */
+    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
+  }
+ 
+  .news{
+    margin: 0px;
+    font-size: 30px;
+    letter-spacing: 0.1em; 
+    margin-left: 30px;
+  }
+  .ContaineurMenu{
+    width: 100%;
+    
+  }
+  .logo {
+    display: none;
+  }
+  .widget {
+    margin: 0px;
+    width: 100%;
+    max-width: none;
+    position: fixed; 
+    bottom: 0px;
+    left: 0px;
+    right: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: row;
+    border: none;
+    border-radius:2px;
+  
+   z-index: 1000;
+  }
+  .home, .reglage, .camera, .compte, .clap {
+    width: 30px;
+  height: 30px;
+    margin: 3px auto;
+    
+  }
+  .Menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+  }
+  .inputMenuContainer {
+    position: fixed; 
+    top: 0px; 
+    justify-content: flex-start;
+    background-color: rgb(41,39,37);
+    border-bottom: 3px solid #000; /* 2 pixels d'épaisseur et couleur noire */
+  }
+  .inputSearch { 
+    margin-left: 5px;
+    justify-content: flex-start;
+    z-index: 1000;
+  }
+  .inputSearch input {
+    margin-left: 5px;
+    padding: 5px 5px 5px 12px;
+    width: 60%;
+    height: 25px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 50px 15px 15px 50px;
+    font-size:15px;
+    z-index: 1000;
+  }
+  .rechercher{
+  width: 4%;
+  min-width: 40px;
+  height: 25px; 
+  border-radius: 15px 50px 50px 15px;
+  border: 2px solid rgb(255, 255, 255);
+  background-color: rgb(78, 74, 187);
+  margin-left: 10px;
+  }
+  .Micro, .notif{
+    margin-left: 10px;
+    width: 25px;
+    height: 25px;
+  }
+  .barre {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+   
+  }
+  .categories {
+    margin-top: 50px;
+    margin-left: 5px;
+   
+  }
+  .nomCat {
+    margin: 5px;
+    padding: 3px;
+    min-width: 100px;
+    font-size: 13px;
+
+  }
+  .ContainerExclu {
+    display: flex;
+    padding:  10px 0px;
+    width: 100%;
+  }
+  .containeurVideoExclu {
+    width: 80%;
+    margin-top: 5px;
+    
+   
+    
+  }
+  .videoExclu {
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    
+  }
+  .videoExclu video {
+   margin: 0px ;
+    width: 100%;
+    aspect-ratio: 16/9; 
+   /* flex-shrink: 0;  Empêche les iframes de rétrécir */
+    border-radius: 10px;
+  }
+ 
+  .flecheG, .flecheD {
+    display: block;
+    margin: 5px;
+    width: 25px;
+    height: 25px;
+     border-radius: 50%;
+     border: none;
+     cursor: pointer;
+   
+    
+  }
+   .barreDef{
+   display: none;
+  }
+  .ContainerNews {
+    margin-bottom: 50px;
+  }
+  
+  .ContainerNews iframe {
+ 
+    width: 46%;
+    aspect-ratio: 16/9;
+    border-radius: 10px;
+  }
+}
