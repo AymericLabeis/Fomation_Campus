@@ -28,9 +28,7 @@ body::before {
   text-decoration: none;
 }
 .navBarre a:hover {
-  color: rgb(134, 26, 26);
-  padding: 20px; 
-  text-decoration: none; 
+  color: rgb(134, 26, 26); 
 }
 .welcome {
   height: 40vh;
@@ -46,10 +44,13 @@ body::before {
   background-color: white;
 }
 .welcome h1 {
-  font-size: 40px;
+  font-size: 45px;
   margin: auto;
 }
 .welcome p {
-  font-size: 30px; 
+  font-size: 20px; 
   margin: auto;
+}
+.test{
+  background-size:content;
 }
